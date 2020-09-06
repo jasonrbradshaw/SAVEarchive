@@ -1,6 +1,8 @@
 // https://mkyong.com/jquery/how-to-add-remove-textbox-dynamically-with-jquery/
+// Add and Remove Schools
+$(document).ready(function(){
 
-    // Add or Remove Courses
+        // Add or Remove Courses
     var counter = 1;
 
     $("#addField").click(function () {
