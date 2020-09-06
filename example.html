@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SAVE example</title>
+	<link rel="stylesheet" href="style.css">
+	<!-- Favicon image goes here -->
+	<link rel="icon" href="">
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/max_char.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+
+<div class="topnav">
+	<div class="navbox">
+	  <a href="instructions.php">First</a>
+	</div>
+	<div class="navbox">
+	  <a href="application.php">Second</a>
+	</div>
+	<div class="navbox">
+	  <a href="parent-statement.php">Third</a>
+	</div>
+	<div class="navbox">
+	  <a class="active" href="candidate-statement.php">Fourth</a>
+</div>
+
+<div class="top">
+	<h1>Example Fields</h1>
+</div>
+
+<div class="body">
+	<form method="POST" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data">
+		<div class="container">
+
+		Text box with character limit <br>
+ 	 	<textarea id="sq3" name="sq3" rows="10" maxlength="2000" required>
+ 	 		
+ 	 		<!-- PHP goes here -->
+
+ 	 	</textarea><br>
+ 	 	<div id="scounter3">Characters remaining (2000)</div><br>
+ 	 </div>
+ 	</form>
+ </div>
+
+ 	 </body>
+ 	</htnl>
