@@ -254,7 +254,7 @@ require_once "config.php";
 </div>
 
 <div class="navigation">
-	<img src="TPS_logo.png" class="logo">
+	<img src="TPS_logo.png" class="logo" alt="Toronto Prep School Logo">
 	<div class="greeting">
 		<p>Hello, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></p>
 	    <p>
@@ -292,7 +292,7 @@ require_once "config.php";
 <div class="body">
 	<form method="POST" action="<?php $_PHP_SELF ?>" enctype="multipart/form-data">
 		<div class="container">
-		Candidate's Surname<br>
+		<label for="can_surname">Candidate's Surname<br></label>
   		<input type="text" name="can_surname" id="can_surname" 
   		<?php 
   		require_once "config.php";
@@ -308,7 +308,7 @@ require_once "config.php";
 		?>
   		required><br><br>
   		
-  		Candidate's Given name(s)<br>
+  		<label for="can_name">Candidate's Given name(s)<br></label>
  	 	<input type="text" name="can_name" id="can_name" 
  	 	<?php 
   		require_once "config.php";
@@ -324,7 +324,7 @@ require_once "config.php";
 		?>
 		required><br><br>
 
- 	 	Candidate's Preferred name<br>
+ 	 	<label for="can_prename">Candidate's Preferred name<br></label>
  	 	<input type="text" name="can_prename" id="can_prename"
  	 	<?php 
   		require_once "config.php";
@@ -340,8 +340,8 @@ require_once "config.php";
 		?>
 		><br><br>
 
- 	 	Home Address<br>
- 	 	<input type="text" name="can_address" 
+ 	 	<label for="home_add">Home Address<br></label>
+ 	 	<input type="text" name="can_address" id="home_add"
  	 	<?php 
   		require_once "config.php";
   		$user_id = $_SESSION["id"];
@@ -356,8 +356,8 @@ require_once "config.php";
 		?>
 		required><br><br>
 
- 	 	Home Telephone<br>
- 	 	<input type="text" name="can_homeph"
+ 	 	<label for="can_homeph">Home Telephone<br></label>
+ 	 	<input type="text" name="can_homeph" id="can_homeph"
  	 	<?php 
   		require_once "config.php";
   		$user_id = $_SESSION["id"];
@@ -372,8 +372,8 @@ require_once "config.php";
 		?>
 		><br><br>
 
- 	 	Candidate's Cell Phone<br>
- 	 	<input type="text" name="can_cellph"
+ 	 	<label for="can_cellph">Candidate's Cell Phone<br></label>
+ 	 	<input type="text" name="can_cellph" id="can_cellph"
  	 	<?php 
   		require_once "config.php";
   		$user_id = $_SESSION["id"];
@@ -388,8 +388,8 @@ require_once "config.php";
 		?>
 		><br><br>
 
- 	 	Candidate's Date of Birth<br>
- 	 	<input type="date" name="can_birth" 
+ 	 	<label for="can_birth">Candidate's Date of Birth<br></label>
+ 	 	<input type="date" name="can_birth" id="can_birth"
  	 	<?php 
   		require_once "config.php";
   		$user_id = $_SESSION["id"];
@@ -404,8 +404,9 @@ require_once "config.php";
 		?>
 		required><br><br>
 
- 	 	Gender<br>
- 	 	<input type="radio" name="can_gender" value="male" 
+		<fieldset>
+ 	 	<legend>Gender<br></legend>
+ 	 	<input type="radio" name="can_gender" value="male" id="can_gender"
 		<?php 
   		require_once "config.php";
   		$user_id = $_SESSION["id"];
@@ -417,8 +418,8 @@ require_once "config.php";
 				}
 			}
 		?>
- 	 	required> Male<br>
-  		<input type="radio" name="can_gender" value="female"
+ 	 	required> <label for="can_gender">Male</label><br>
+  		<input type="radio" name="can_gender" value="female" id="can_female"
   		<?php 
   		require_once "config.php";
   		$user_id = $_SESSION["id"];
@@ -430,8 +431,8 @@ require_once "config.php";
 				}
 			}
 		?>
-		> Female<br>
-  		<input type="radio" name="can_gender" value="other"
+		> <label for="can_female">Female<br></label>
+  		<input type="radio" name="can_gender" value="other" id="can_other"
   		<?php 
   		require_once "config.php";
   		$user_id = $_SESSION["id"];
@@ -443,9 +444,10 @@ require_once "config.php";
 				}
 			}
 		?>
-		> Other<br><br>
+		> <label for="can_other">Other</label>
+		</fieldset><br>
 
-  		Upload a recent image of the candidate<br>
+  		<label for="can_image">Upload a recent image of the candidate<br></label>
   		<?php 
   		require_once "config.php";
   		$user_id = $_SESSION["id"];
@@ -455,10 +457,10 @@ require_once "config.php";
 				echo "✅" . htmlspecialchars($row['can_image']) . " uploaded<br><br>";
 			}
 		?>
-  		<input type="file" name="can_image" accept="image/*"><br><br>
+  		<input type="file" name="can_image" id="can_image" accept="image/*"><br><br>
   	
 
-  		Upload a copy of the candidate's birth certificate or passport<br>
+  		<label for="birth_cert">Upload a copy of the candidate's birth certificate or passport<br></label>
   		<?php 
   		require_once "config.php";
   		$user_id = $_SESSION["id"];
@@ -468,10 +470,11 @@ require_once "config.php";
 				echo "✅" . htmlspecialchars($row['can_birthcert']) . " uploaded<br><br>";
 			}
 		?>
-  		<input type="file" name="birth_cert" accept="image/*"><br><br>
+  		<input type="file" name="birth_cert" id="birth_cert" accept="image/*"><br><br>
   		
+  		<!-- Left off fixing accessibility code HERE -->
 
-  		Upload copies of the candidate's final (June) report cards for the past two years plus the most recent report card<br>
+  		<label for="reports">Upload copies of the candidate's final (June) report cards for the past two years plus the most recent report card<br></label>
   		<?php 
   		require_once "config.php";
   		$user_id = $_SESSION["id"];
@@ -511,7 +514,7 @@ require_once "config.php";
 			if(isset($_POST['submit'])) {
 
 			$course_num = array('course_num1', 'course_num2', 'course_num3', 'course_num4', 'course_num5', 'course_num6', 'course_num7', 'course_num8', 'course_num9', 'course_num10');	
-		  	// Course and course number query (foreach loop??)
+		  	// Course and course number query
 		  	foreach($course_num as $course){
 		    $course = mysqli_real_escape_string($conn, $_POST[$course]);
 
